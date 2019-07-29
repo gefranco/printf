@@ -10,7 +10,13 @@ int prt_str(va_list valist)
 	int cc = 0;
 	char *s = va_arg(valist, char*);
 	int i = 0;
-
+	char *exeption = "(null)";
+	
+	if (s == NULL)
+	{
+		write(STDOUT_FILENO, exeption, 6);
+		return (6);	
+	}
 	while (s[i])
 	{
 		cc += write(STDOUT_FILENO, &s[i], 1);
