@@ -7,13 +7,11 @@
  */
 int prt_mod(va_list valist)
 {
-	(void) valist;
-
 	int cc;
 	char c = '%';
+	(void) valist;
 
 	cc = 0;
-
 	cc += write(STDOUT_FILENO, &c, 1);
 	return (cc);
 }
