@@ -4,6 +4,7 @@ int _printf(const char *format, ...);
 int mngfmt(int, va_list);
 int prt_char(va_list);
 int prt_str(va_list);
+int prt_mod(va_list);
 /**
  * struct prt_format - struct of printers operators
  * @t: Is the character.
