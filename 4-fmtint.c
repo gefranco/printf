@@ -15,10 +15,15 @@ int prt_int(va_list valist)
 	int number = va_arg(valist, int);
 	int i;
 	char *digits;
-	int cnt = cntdtsn(number);
-
+	int cnt;	
+	if(number < 0)
+	{
+		number *= -1;
+		cc +=write(STDOUT_FILENO, "-",1);
+	}
+	
 	digits = itoch(number);
-
+	cnt = cntdtsn(number);
 	for (i = 0; i <= cnt; i++)
 	{
 		cc += write(STDOUT_FILENO, digits++, 1);
