@@ -2,8 +2,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "holberton.h"
-/*char *itoch(int number);
-int cntdtsn(int number);*/
+
 /**
  * prt_int - This is a function that prints an integer
  * @valist: Is the name of va_list
@@ -13,15 +12,15 @@ int prt_int(va_list valist)
 {
 	int cc = 0;
 	int number = va_arg(valist, int);
-/*	int i;*/
 	char *digits;
-	int cnt;	
-	if(number < 0)
+	int cnt;
+
+	if (number < 0)
 	{
 		number *= -1;
-		cc +=write(STDOUT_FILENO, "-",1);
+		cc += write(STDOUT_FILENO, "-", 1);
 	}
-	
+
 	digits = itoch(number);
 	cnt = cntdtsn(number);
 /*	for (i = 0; i <= cnt; i++)*/
