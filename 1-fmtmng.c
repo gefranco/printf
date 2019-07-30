@@ -13,7 +13,8 @@ int mngfmt(int c, va_list valist)
 		{99, prt_char},
 		{115, prt_str},
 		{100, prt_int},
-		{37, prt_mod}
+		{37, prt_mod},
+		{105, prt_int}
 	};
 
 	if (c == 99)
@@ -28,7 +29,7 @@ int mngfmt(int c, va_list valist)
 		return (prto[2].f(valist));
 	else if (c == 37)
 	{
-		return (prto[2].f(valist));
+		return (prto[3].f(valist));
 	}
 	else
 	{
