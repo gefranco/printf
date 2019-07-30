@@ -11,11 +11,11 @@ int prt_str(va_list valist)
 	char *s = va_arg(valist, char*);
 	int i = 0;
 	char *exeption = "(null)";
-	
+
 	if (s == NULL)
 	{
 		write(STDOUT_FILENO, exeption, 6);
-		return (6);	
+		return (6);
 	}
 	while (s[i])
 	{

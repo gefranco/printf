@@ -12,6 +12,7 @@ int mngfmt(int c, va_list valist)
 	prt_f prto[] = {
 		{99, prt_char},
 		{115, prt_str},
+		{100, prt_int},
 		{37, prt_mod}
 	};
 
@@ -23,6 +24,8 @@ int mngfmt(int c, va_list valist)
 	{
 		return (prto[1].f(valist));
 	}
+	else if (c == 100)
+		return (prto[2].f(valist));
 	else if (c == 37)
 	{
 		return (prto[2].f(valist));
