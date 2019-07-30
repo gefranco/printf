@@ -17,41 +17,23 @@ int mngfmt(const char *c, va_list valist)
 		{"d", prt_int},
 		{"%", prt_mod},
 		{"i", prt_int},
+		{"b", prt_bin},
+		{"u", prt_unsg},
+		{"o", prt_octal},
+		{"x", prt_lowhexa},
+		{"X", prt_upphexa},
+		{"S", prt_strhexa},
+		{"p", prt_point},
 		{NULL, NULL}
 	};
 
 	while (prto[i].t)
 	{
-		/*printf("%s**************", c);*/
 		if (prto[i].t[0] == c[0])
 			return (prto[i].f(valist));
-		
 		i++;
 	}
-	
-	/*if (prto[] == "c")
-	{
-		return (prto[0].f(valist));
-	}
-	else if (c == 115)
-	{
-		return (prto[1].f(valist));
-	}
-	else if (c == 'd')
-		return (prto[2].f(valist));
-	else if (c == 37)
-	{
-		return (prto[3].f(valist));
-	}
-	else if (c == 'i')
-	{
-		return (prto[4].f(valist));
-	}
-	else
-	{
-		return (0);
-	}*/
-		return (0);
+	return (0);
 
 
 }
