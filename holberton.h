@@ -18,7 +18,7 @@ int cntdtsn(int number);
  */
 typedef struct prt_format
 {
-	int t;
+	char *t;
 	int (*f)(va_list);
 } prt_f;
 #endif

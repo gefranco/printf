@@ -10,11 +10,11 @@
 int mngfmt(int c, va_list valist)
 {
 	prt_f prto[] = {
-		{99, prt_char},
-		{115, prt_str},
-		{'d', prt_int},
-		{37, prt_mod},
-		{'i', prt_int}
+		{"c", prt_char},
+		{"s", prt_str},
+		{"d", prt_int},
+		{"%", prt_mod},
+		{"i", prt_int}
 	};
 
 	if (c == 99)
