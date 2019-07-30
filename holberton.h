@@ -7,6 +7,13 @@ int prt_char(va_list);
 int prt_str(va_list);
 int prt_int(va_list);
 int prt_mod(va_list);
+int prt_bin(va_list);
+int prt_unsg(va_list);
+int prt_octal(va_list);
+int prt_lowhexa(va_list);
+int prt_upphexa(va_list);
+int prt_strhexa(va_list);
+int prt_point(va_list);
 char *itoch(int number);
 int cntdtsn(int number);
 /**

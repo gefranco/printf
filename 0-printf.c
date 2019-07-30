@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	va_list valist;
 	int i = 0;
 	int cc = 0;
-	char *a;	
+	char *a;
 
 	va_start(valist, format);
 	while (format && format[i])
@@ -19,8 +19,8 @@ int _printf(const char *format, ...)
 		if (format[i] == 37)
 		{
 			i++;
-			a =(char *)&format[i]; 
-			
+			a = (char *)&format[i];
+
 			cc += mngfmt(a, valist);
 		}
 		else
