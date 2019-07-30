@@ -13,7 +13,7 @@ int prt_int(va_list valist)
 {
 	int cc = 0;
 	int number = va_arg(valist, int);
-	int i;
+/*	int i;*/
 	char *digits;
 	int cnt;	
 	if(number < 0)
@@ -24,10 +24,11 @@ int prt_int(va_list valist)
 	
 	digits = itoch(number);
 	cnt = cntdtsn(number);
-	for (i = 0; i <= cnt; i++)
+/*	for (i = 0; i <= cnt; i++)*/
 	{
-		cc += write(STDOUT_FILENO, digits++, 1);
+		cc += write(STDOUT_FILENO, digits, cnt + 1);
 	}
+	free(digits);
 	return (cc - 1);
 }
 /**
@@ -64,7 +65,7 @@ char *itoch(int number)
 	count = cntdtsn(number2);
 	i = count;
 	number2 = number;
-	digits = malloc(count * sizeof(char));
+	digits = malloc(count * 10 * sizeof(char *));
 	while ((number2 = number2 / 10) > 0)
 	{
 		number = number % 10;
