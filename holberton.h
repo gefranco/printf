@@ -2,7 +2,7 @@
 #define mpf
 #include <stdarg.h>
 int _printf(const char *format, ...);
-int mngfmt(int, va_list);
+int mngfmt(const char *c, va_list);
 int prt_char(va_list);
 int prt_str(va_list);
 int prt_int(va_list);
