@@ -25,13 +25,13 @@ int mngfmt(int c, va_list valist)
 	{
 		return (prto[1].f(valist));
 	}
-	else if (c == 100)
+	else if (c == 'd')
 		return (prto[2].f(valist));
 	else if (c == 37)
 	{
 		return (prto[3].f(valist));
 	}
-	else if (c == 105)
+	else if (c == 'i')
 	{
 		return (prto[4].f(valist));
 	}
