@@ -1,5 +1,4 @@
-#include <stdarg.h>
-#include <unistd.h>
+#include "holberton.h"
 /**
  * prt_char - This is a function that process the string that is "c" type.
  * @valist: Is the name of the va_list.

@@ -1,7 +1,4 @@
-#include <stdarg.h>
-#include <unistd.h>
 #include "holberton.h"
-#include <stdio.h>
 /**
  * mngfmt - Function that manage the string format
  * @c:Is the character in decimal.

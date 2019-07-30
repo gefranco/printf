@@ -1,5 +1,3 @@
-#include <stdarg.h>
-#include <unistd.h>
 #include "holberton.h"
 /**
  * _printf - This is a program like the printf make for Holberton.

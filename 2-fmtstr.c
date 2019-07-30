@@ -1,5 +1,4 @@
-#include <stdarg.h>
-#include <unistd.h>
+#include "holberton.h"
 /**
  * prt_str - This function process the string when is "s" type.
  * @valist: Is the name of the va_list.
