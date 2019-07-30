@@ -1,6 +1,3 @@
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
 #include "holberton.h"
 /*char *itoch(int number);
 int cntdtsn(int number);*/
@@ -12,31 +9,35 @@ int cntdtsn(int number);*/
 int prt_int(va_list valist)
 {
 	int cc = 0;
-	int number = va_arg(valist, int);
-/*	int i;*/
+	long number = va_arg(valist, long);
+	int i;
 	char *digits;
-	int cnt;	
+	int cnt = 0;	
+	char *a;
+	char min = '-';
 	if(number < 0)
 	{
-		number *= -1;
-		cc +=write(STDOUT_FILENO, "-",1);
+		number = number * (-1);
+		a = (char *)&min;
+		cc +=write(STDOUT_FILENO, a,1);
 	}
 	
 	digits = itoch(number);
 	cnt = cntdtsn(number);
-/*	for (i = 0; i <= cnt; i++)*/
+	for (i = 0; i <= cnt; i++)
 	{
-		cc += write(STDOUT_FILENO, digits, cnt + 1);
+		a =(char *)&digits[i];
+		cc += write(STDOUT_FILENO, a, 1);
 	}
 	free(digits);
-	return (cc - 1);
+	return (cnt - 1);
 }
 /**
  * cntdtsn - This is a function that count the digits of a number.
  * @number: Is the number that join in the function.
  * Return: count.
  */
-int cntdtsn(int number)
+int cntdtsn(long number)
 {
 	int count = 1;
 
@@ -53,10 +54,10 @@ int cntdtsn(int number)
  * @number: This is the number that changed to a char.
  * Return: a char.
  */
-char *itoch(int number)
+char *itoch(long number)
 {
 	char nn;
-	int number2 = number;
+	long number2 = number;
 	int count = 1;
 	int i = 0;
 	char *digits;
