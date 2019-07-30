@@ -15,6 +15,13 @@ int prt_int(va_list);
 int prt_mod(va_list);
 char *itoch(long number);
 int cntdtsn(long number);
+int prt_bin(va_list);
+int prt_unsg(va_list);
+int prt_octal(va_list);
+int prt_lowhexa(va_list);
+int prt_upphexa(va_list);
+int prt_strhexa(va_list);
+int prt_point(va_list);
 /**
  * struct prt_format - struct of printers operators
  * @t: Is the character.

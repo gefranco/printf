@@ -1,6 +1,5 @@
 #include "holberton.h"
-/*char *itoch(int number);
-int cntdtsn(int number);*/
+
 /**
  * prt_int - This is a function that prints an integer
  * @valist: Is the name of va_list
@@ -12,21 +11,22 @@ int prt_int(va_list valist)
 	long number = va_arg(valist, long);
 	int i;
 	char *digits;
-	int cnt = 0;	
+	int cnt = 0;
 	char *a;
 	char min = '-';
-	if(number < 0)
+
+	if (number < 0)
 	{
 		number = number * (-1);
 		a = (char *)&min;
-		cc +=write(STDOUT_FILENO, a,1);
+		cc += write(STDOUT_FILENO, a, 1);
 	}
-	
+
 	digits = itoch(number);
 	cnt = cntdtsn(number);
 	for (i = 0; i <= cnt; i++)
 	{
-		a =(char *)&digits[i];
+		a = (char *)&digits[i];
 		cc += write(STDOUT_FILENO, a, 1);
 	}
 	free(digits);
