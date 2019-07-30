@@ -1,5 +1,6 @@
 #ifndef mpf
 #define mpf
+#include <stdarg.h>
 int _printf(const char *format, ...);
 int mngfmt(int, va_list);
 int prt_char(va_list);
