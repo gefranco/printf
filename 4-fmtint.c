@@ -2,8 +2,9 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
-char *itoch(int number);
-int cntdtsn(int number);
+#include "holberton.h"
+/*char *itoch(int number);
+int cntdtsn(int number);*/
 /**
  * prt_int - This is a function that prints an integer
  * @valist: Is the name of va_list
