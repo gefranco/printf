@@ -14,20 +14,19 @@ int prt_int(va_list valist)
 	int cnt = 0;
 	char *a;
 	char min = '-';
-	
+
 	if (nu < 0)
 	{
-		
+
 		a = (char *)&min;
-			
-		if(a)
-		{	
+
+		if (a)
+		{
 			write(STDOUT_FILENO, a, 1);
 			cc++;
 		}
-		nu = - nu;
+		nu = -nu;
 
-		/*putchar('-');*/
 	}
 
 	digits = itoch(nu);
@@ -35,18 +34,18 @@ int prt_int(va_list valist)
 	for (i = 1; i <= cnt; i++)
 	{
 		a = (char *)&digits[i];
-		if(a && a != NULL && a!= '\0')
-		{	
+		if (a && a != NULL && a != '\0')
+		{
 			write(STDOUT_FILENO, a, 1);
 			cc++;
-		}	
+		}
 	}
 	free(digits);
 	return (cc);
 }
 /**
  * cntdtsn - This is a function that count the digits of a number.
- * @number: Is the number that join in the function.
+ * @num: Is the number that join in the function.
  * Return: count.
  */
 int cntdtsn(long num)
@@ -63,7 +62,7 @@ int cntdtsn(long num)
 }
 /**
  * itoch - This is a function for change a integer to a char.
- * @number: This is the number that changed to a char.
+ * @numb: This is the number that changed to a char.
  * Return: a char.
  */
 char *itoch(long numb)
@@ -74,8 +73,6 @@ char *itoch(long numb)
 	int i = 0;
 	char *digits;
 	int j = 0;
-	
-	/*printf("%l***********",numb);*/
 
 	count = cntdtsn(number2);
 	i = count;
@@ -94,10 +91,10 @@ char *itoch(long numb)
 	nn = numb + '0';
 	digits[i] = nn;
 
-	for(j = 0; digits[j]; j++)
+	for (j = 0; digits[j]; j++)
 	{
-		printf("%c******",digits[j]);
-	}	
-	
+		printf("%c******", digits[j]);
+	}
+
 	return (digits);
 }
