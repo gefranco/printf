@@ -65,7 +65,7 @@ char *itoch(int number)
 	count = cntdtsn(number2);
 	i = count;
 	number2 = number;
-	digits = malloc(count * 10 * sizeof(char *));
+	digits = malloc(count  * sizeof(char *));
 	while ((number2 = number2 / 10) > 0)
 	{
 		number = number % 10;
