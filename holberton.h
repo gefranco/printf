@@ -7,6 +7,8 @@ int prt_char(va_list);
 int prt_str(va_list);
 int prt_int(va_list);
 int prt_mod(va_list);
+char *itoch(int number);
+int cntdtsn(int number);
 /**
  * struct prt_format - struct of printers operators
  * @t: Is the character.
