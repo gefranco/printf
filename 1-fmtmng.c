@@ -31,6 +31,10 @@ int mngfmt(int c, va_list valist)
 	{
 		return (prto[3].f(valist));
 	}
+	else if (c == 105)
+	{
+		return (prto[4].f(valist));
+	}
 	else
 	{
 		return (0);
