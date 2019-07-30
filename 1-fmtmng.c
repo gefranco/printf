@@ -1,23 +1,35 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include "holberton.h"
+#include <stdio.h>
 /**
  * mngfmt - Function that manage the string format
  * @c:Is the character in decimal.
  * @valist: Is the name of list.
  * Return: 0 if there are no matches.
  */
-int mngfmt(int c, va_list valist)
+int mngfmt(const char *c, va_list valist)
 {
+	int i = 0;
 	prt_f prto[] = {
 		{"c", prt_char},
 		{"s", prt_str},
 		{"d", prt_int},
 		{"%", prt_mod},
-		{"i", prt_int}
+		{"i", prt_int},
+		{NULL, NULL}
 	};
 
-	if (c == 99)
+	while (prto[i].t)
+	{
+		/*printf("%s**************", c);*/
+		if (prto[i].t[0] == c[0])
+			return (prto[i].f(valist));
+		
+		i++;
+	}
+	
+	/*if (prto[] == "c")
 	{
 		return (prto[0].f(valist));
 	}
@@ -38,5 +50,8 @@ int mngfmt(int c, va_list valist)
 	else
 	{
 		return (0);
-	}
+	}*/
+		return (0);
+
+
 }
