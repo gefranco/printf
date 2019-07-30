@@ -2,18 +2,20 @@
 #include <unistd.h>
 #include "holberton.h"
 /**
- * print_all - check the code for Holberton School students.
- * @format: a list of types of arguments
+ * _printf - This is a program like the printf make for Holberton.
+ * @format: This is the String that join in the program.
+ * Return: Returns a string with a treated format.
  */
 int _printf(const char *format, ...)
 {
 	va_list valist;
 	int i = 0;
 	int cc = 0;
+
 	va_start(valist, format);
 	while (format && format[i])
 	{
-		if(format[i] == 37)
+		if (format[i] == 37)
 		{
 			i++;
 			cc += mngfmt(format[i], valist);

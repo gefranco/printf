@@ -1,15 +1,17 @@
 #include <stdarg.h>
 #include <unistd.h>
 /**
- * prt_char - This is a function that process the string that is "c" type.
+ * prt_mod - This is a function that process the case %% for print %.
  * @valist: Is the name of the va_list.
  * Return: cc.
  */
-int prt_char(va_list valist)
+int prt_mod(va_list valist)
 {
-	int cc = 0;
-	int *c = va_arg(valist, int);
+	int cc;
+	char c = '%';
+	(void) valist;
 
+	cc = 0;
 	cc += write(STDOUT_FILENO, &c, 1);
 	return (cc);
 }

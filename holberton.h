@@ -5,10 +5,12 @@ int mngfmt(int, va_list);
 int prt_char(va_list);
 int prt_str(va_list);
 int prt_int(va_list);
+int prt_mod(va_list);
+
 /**
- * struct print1 - struct of printers operators
- * @t: First member
- * @f: Second member
+ * struct prt_format - struct of printers operators
+ * @t: Is the character.
+ * @f: Is the function that is called.
  *
  * Description: struct to manage diferent types of print
  */
