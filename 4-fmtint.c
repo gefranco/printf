@@ -8,43 +8,55 @@
 int prt_int(va_list valist)
 {
 	int cc = 0;
-	long number = va_arg(valist, long);
+	long nu = va_arg(valist, int);
 	int i;
 	char *digits;
 	int cnt = 0;
 	char *a;
 	char min = '-';
-
-	if (number < 0)
+	
+	if (nu < 0)
 	{
-		number = number * (-1);
+		
 		a = (char *)&min;
-		cc += write(STDOUT_FILENO, a, 1);
+			
+		if(a)
+		{	
+			write(STDOUT_FILENO, a, 1);
+			cc++;
+		}
+		nu = - nu;
+
+		/*putchar('-');*/
 	}
 
-	digits = itoch(number);
-	cnt = cntdtsn(number);
-	for (i = 0; i <= cnt; i++)
+	digits = itoch(nu);
+	cnt = cntdtsn(nu);
+	for (i = 1; i <= cnt; i++)
 	{
 		a = (char *)&digits[i];
-		cc += write(STDOUT_FILENO, a, 1);
+		if(a && a != NULL && a!= '\0')
+		{	
+			write(STDOUT_FILENO, a, 1);
+			cc++;
+		}	
 	}
 	free(digits);
-	return (cnt - 1);
+	return (cc);
 }
 /**
  * cntdtsn - This is a function that count the digits of a number.
  * @number: Is the number that join in the function.
  * Return: count.
  */
-int cntdtsn(long number)
+int cntdtsn(long num)
 {
 	int count = 1;
 
-	number = number / 10;
-	while (number > 0)
+	num = num / 10;
+	while (num > 0)
 	{
-		number = number / 10;
+		num = num / 10;
 		count++;
 	}
 	return (count);
@@ -54,30 +66,38 @@ int cntdtsn(long number)
  * @number: This is the number that changed to a char.
  * Return: a char.
  */
-char *itoch(long number)
+char *itoch(long numb)
 {
 	char nn;
-	long number2 = number;
+	long number2 = numb;
 	int count = 1;
 	int i = 0;
 	char *digits;
 	int j = 0;
+	
+	/*printf("%l***********",numb);*/
 
 	count = cntdtsn(number2);
 	i = count;
-	number2 = number;
+	number2 = numb;
 	digits = malloc(count  * sizeof(char *));
 	while ((number2 = number2 / 10) > 0)
 	{
-		number = number % 10;
-		nn = number  + '0';
-		number = number2 % 10;
+		numb = numb % 10;
+		nn = numb  + '0';
+		numb = number2 % 10;
 		digits[i] = nn;
 		i--;
 		j++;
 	}
-	number = number % 10;
-	nn = number + '0';
+	numb = numb % 10;
+	nn = numb + '0';
 	digits[i] = nn;
+
+	for(j = 0; digits[j]; j++)
+	{
+		printf("%c******",digits[j]);
+	}	
+	
 	return (digits);
 }
