@@ -20,6 +20,8 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			a = (char *)&format[i];
+			if (a)
+				return (-1);
 
 			cc += mngfmt(a, valist);
 		}
