@@ -13,10 +13,7 @@ int prt_int(va_list valist)
 	char *digits;
 	int cnt = 0;
 	char *a;
-	char min = '-';	
-	if(!nu)
-		return (-1);	
-
+	char min = '-';
 
 	if (nu < 0)
 	{

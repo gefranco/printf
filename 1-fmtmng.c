@@ -30,7 +30,7 @@ int mngfmt(const char *c, va_list valist)
 			return (prto[i].f(valist));
 		i++;
 	}
-	
+
 
 	return (-1);
 

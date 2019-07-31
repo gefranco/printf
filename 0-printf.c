@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	char *a;
 
 	va_start(valist, format);
-	if(!format)
+	if (!format)
 		return (-1);
 	while (format && format[i])
 	{
