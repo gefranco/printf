@@ -91,10 +91,5 @@ char *itoch(long numb)
 	nn = numb + '0';
 	digits[i] = nn;
 
-	for (j = 0; digits[j]; j++)
-	{
-		printf("%c******", digits[j]);
-	}
-
 	return (digits);
 }
