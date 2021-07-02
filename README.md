@@ -1,9 +1,9 @@
-<h1 align="center">_PRINTF</h1>
+<h1 align="center">_PRINTF()</h1>
 
 <p align="center">
   <img src="https://github.com/gefranco/printf/blob/master/assets/printf.png"
        alt="Holbertonbnb logo"
-       width="500"
+       width="100%"
   >
 </p>
 # _printf( );
